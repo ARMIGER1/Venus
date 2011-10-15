@@ -116,8 +116,44 @@
 		
 		// ========== List functions ==========
 		
-		// Add ul
-		// add ol
+		/**
+		 * 
+		 * @brief Adds an unordered list.
+		 * @param array $items An array of list items to add.
+		 */
+		function unordered_list($items) {
+			
+			echo "<ul>";
+			
+			foreach($items as $listitems) {
+				
+				echo "<li>" . $listitems . "</li>";
+				
+			}
+			
+			echo "</ul>";
+			
+		}
+
+		/**
+		 * 
+		 * @brief Adds an ordered list.
+		 * @param array $items An array of list items to add.
+		 * @see unordered_list()
+		 */
+		function ordered_list($items) {
+			
+			echo "<ol>";
+			
+			foreach ($items as $listitems) {
+				
+				echo "<li>" . $listitems . "</li>";
+				
+			}
+			
+			echo "</ol>";
+			
+		}
 		
 		// ========== Link functions ==========
 		
