@@ -198,6 +198,16 @@
 		// ========== Image functions ==========
 		
 		// Add image
+		/**
+		 * 
+		 * Adds a new image to the page.
+		 * @param url $image_src The source URL of the image.
+		 * @param string $title The title of the image, in case it cannot be displayed.
+		 */
+		function image($image_src = 'http://placehold.it/75x75', $title = 'New Image') {
+			 
+			echo "<img src='$image_src' alt='$title' />";
+		}
 		
 	}
 ?>
