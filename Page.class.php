@@ -157,8 +157,43 @@
 		
 		// ========== Link functions ==========
 		
-		// Add link
-		// Add image link
+		/**
+		 * 
+		 * @brief Adds a link to the page.
+		 * @param string $title The title of the new link as displayed on the page.
+		 * @param url $url The URL of the page being linked to.
+		 * @param string $target The specified target of the link.
+		 * 
+		 * @details $target may have 1 of 4 parameters:<br />
+		 * <ol>
+		 * <li><b><i>_blank</i></b> - Opens the link in a new window or tab.</li>
+		 * <li><b><i>_self</i></b> - Opens the link in the same frame
+		 * as the link that was clicked. <b>DEFAULT</b> </li>
+		 * <li><b><i>_parent</i></b> - Opens the link in the parent frameset.</li>
+		 * <li><b><i>_top</i></b> - Opens the link in the full body of the window.</li>
+		 * </ol>
+		 */
+		function link($title = 'New Link', $url = '#', $target = '_self') {
+			
+			echo "<a href='$url' target='$target'>$title</a>";
+			
+		}
+
+		/**
+		 * 
+		 * @brief Adds an image link to the page.
+		 * @param url $image_src The source url of the image.
+		 * @param string $title The title of the link.
+		 * @param url $url The URL of the page being linked to.
+		 * @param string $target The specified target of the link.
+		 * 
+		 * @see link()
+		 */
+		function image_link($image_src = 'http://placehold.it/75x75', $title = 'New Link', $url = '#', $target = '_self') {
+			
+			echo "<a href='$url' target='$target'><img src='$image_src' /></a>";
+			
+		}
 		
 		// ========== Image functions ==========
 		
