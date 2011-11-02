@@ -18,7 +18,8 @@
 		 * 
 		 * @brief Verifies that the class has been included and is in fact working.
 		 */
-		function test() {
+		function test()
+		{
 			
 			echo "<div style=\"border: 1px solid white; width: auto; float: left; color: white; padding: 1%; background(200,200,200,0.5);\">Page.class.php Test Success!</div>";
 			
@@ -31,7 +32,8 @@
 		 * @brief Sets the title of the entire page
 		 * @param string $title The main title of the page.
 		 */
-		function set_page_title($title) {
+		function set_page_title($title)
+		{
 			
 			$this->page_title = $title;
 			
@@ -42,7 +44,8 @@
 		 * @brief Gets the title of the entire page.
 		 * @return string The main title of the page.
 		 */
-		function get_page_title() {
+		function get_page_title()
+		{
 			
 			return $this->page_title;
 			
@@ -53,7 +56,8 @@
 		 * @brief Sets the subtitle of the entire page.
 		 * @param string $subtitle The main subtitle of the page.
 		 */
-		function set_page_subtitle($subtitle) {
+		function set_page_subtitle($subtitle)
+		{
 			
 			$this->page_subtitle = $subtitle;
 			
@@ -64,7 +68,8 @@
 		 * @brief Gets the main subtitle of the page.
 		 * @return string The main subtitle of the page.
 		 */
-		function get_page_subtitle() {
+		function get_page_subtitle()
+		{
 			
 			return $this->page_subtitle;
 			
@@ -75,7 +80,8 @@
 		 * @brief Sets the title of the current section.
 		 * @param string $title The new title for the current section.
 		 */
-		function set_section_title($title) {
+		function set_section_title($title)
+		{
 			
 			$this->section_title = $title;
 			
@@ -86,7 +92,8 @@
 		 * @brief Gets the title of the current section.
 		 * @return string The title of the current section.
 		 */
-		function get_section_title() {
+		function get_section_title()
+		{
 			
 			return $this->section_title;
 			
@@ -97,7 +104,8 @@
 		 * @brief Sets the subtitle of the current section.
 		 * @param string $subtitle The subtitle of the current section.
 		 */
-		function set_section_subtitle($subtitle) {
+		function set_section_subtitle($subtitle)
+		{
 			
 			$this->section_subtitle = $subtitle;
 			
@@ -108,7 +116,8 @@
 		 * @brief Gets the subtitle of the current section.
 		 * @return string
 		 */
-		function get_section_subtitle() {
+		function get_section_subtitle()
+		{
 			
 			return $this->section_subtitle;
 			
@@ -121,7 +130,8 @@
 		 * @brief Adds an unordered list.
 		 * @param array $items An array of list items to add.
 		 */
-		function unordered_list($items) {
+		function unordered_list($items)
+		{
 			
 			echo "<ul>";
 			
@@ -141,7 +151,8 @@
 		 * @param array $items An array of list items to add.
 		 * @see unordered_list()
 		 */
-		function ordered_list($items) {
+		function ordered_list($items)
+		{
 			
 			echo "<ol>";
 			
@@ -173,7 +184,8 @@
 		 * <li><b><i>_top</i></b> - Opens the link in the full body of the window.</li>
 		 * </ol>
 		 */
-		function link($title = 'New Link', $url = '#', $target = '_self') {
+		function link($title = 'New Link', $url = '#', $target = '_self')
+		{
 			
 			echo "<a href='$url' target='$target'>$title</a>";
 			
@@ -189,7 +201,8 @@
 		 * 
 		 * @see link()
 		 */
-		function image_link($image_src = 'http://placehold.it/75x75', $title = 'New Link', $url = '#', $target = '_self') {
+		function image_link($image_src = 'http://placehold.it/75x75', $title = 'New Link', $url = '#', $target = '_self')
+		{
 			
 			echo "<a href='$url' target='$target'><img src='$image_src' /></a>";
 			
@@ -204,9 +217,48 @@
 		 * @param url $image_src The source URL of the image.
 		 * @param string $title The title of the image, in case it cannot be displayed.
 		 */
-		function image($image_src = 'http://placehold.it/75x75', $title = 'New Image') {
+		function image($image_src = 'http://placehold.it/75x75', $title = 'New Image')
+		{
 			 
 			echo "<img src='$image_src' alt='$title' />";
+		}
+		
+		/**
+		 * 
+		 * @brief Displays the amount of memory used by the page in Kb.
+		 */
+		function memory_usage()
+		{
+			echo "Total memory used: " . memory_get_usage() . " Kb\n";
+		}
+		
+		/**
+		 * 
+		 * Trims the specified string to a specified number of words.
+		 * @param string $text The string to trim.
+		 * @param integer $words The number of words to trim at.
+		 * @return string The trimmed text.
+		 */
+		function trimText ( $text, $words )
+		{ // trim the text to trimNumber amount of words
+			$text = str_replace(" ", " ", $text);
+			$trimmed = NULL;
+			$string = explode(" ", $text);
+			if ( count($string) > $words )
+			{
+				for ( $wordCounter = 0 ; $wordCounter <= $words ; $wordCounter++ ) {
+					$trimmed .= $string[$wordCounter];
+					if ( $wordCounter < $words ) {
+						$trimmed .= " ";
+					} else {
+						$trimmed .= "...";
+					}
+				}
+			} else {
+				$trimmed = $text;
+			}
+			$trimmed = stripslashes(trim($trimmed));
+			return ($trimmed);
 		}
 		
 	}
