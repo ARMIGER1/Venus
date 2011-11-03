@@ -14,8 +14,11 @@
 		 * @brief Adds a linked file to the header.
 		 * @param string $filetype The filetype of the linked file.
 		 * @param url $url The URL of the linked file.
+		 * @param string $title The title of the linked file, if necessary.
+		 * @note The $title attribute is not required unless including
+		 * an alternate stylesheet, at this time.
 		 */
-		function linked_file($filetype = 'stylesheet', $url = '#') {
+		function linked_file($filetype = 'stylesheet', $url = '#', $title = '') {
 			
 			if ($url == '' || $url == null) {
 				
@@ -27,6 +30,13 @@
 				switch ($filetype) {
 					case 'stylesheet':
 						echo "<link rel='stylesheet' href='$url' />\n";
+						break;
+					case 'alternate stylesheet':
+						if ($title != '') {
+							echo "<link rel='alternate stylesheet' type='text/css' href='$url' title='$title' />";
+						} else {
+							echo 'No title specified!  You must include a title to use an alternate stylesheet.';
+						}
 						break;
 					case 'javascript':
 						echo "<script type='text/javascript' src='$url'></script>\n";
