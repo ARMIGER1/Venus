@@ -6,6 +6,7 @@
 	 * @author Nick Smith <1hockeyplayer+github@gmail.com>
 	 * @copyright Copyright (c) 2011, Nick Smith
 	 * @version 1.0
+	 * @license http://creativecommons.org/licenses/by-sa/3.0/
 	 */
 	class Header extends Page {
 		
@@ -49,5 +50,10 @@
 			}
 			
 		}
+		
+		function mobile_stylesheet($url, $mobile_device) {
+			//
+		}
+	//
 	}
 ?>
