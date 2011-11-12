@@ -14,6 +14,7 @@
 		var $page_subtitle;
 		var $section_title;
 		var $section_subtitle;
+		var $site_title;
 		
 		/**
 		 * 
@@ -115,13 +116,31 @@
 		/**
 		 * 
 		 * @brief Gets the subtitle of the current section.
-		 * @return string
+		 * @return string The subtitle of the current section.
 		 */
 		function get_section_subtitle()
 		{
 			
 			return $this->section_subtitle;
 			
+		}
+		
+		/**
+		 * @brief Sets the title of the page site-wide.
+		 * @param string $title The main title of the current site.
+		 */
+		function set_site_title($title)
+		{
+			$this->site_title = $title;
+		}
+		
+		/**
+		 * @brief Gets the title of the current site.
+		 * @return string The title of the current site.
+		 */
+		function get_site_title()
+		{
+			return $this->site_title;
 		}
 		
 		// ========== List functions ==========
