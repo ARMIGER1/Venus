@@ -1,0 +1,22 @@
+Venus v. 1.0
+
+A PHP framework for easier dynamic Web development.
+
+==========
+
+1. Installation
+2. Usage
+
+==========
+
+1. INSTALLATION
+
+To install, simply put the 'Venus' directory in your site's root directory.
+
+==========
+
+2. USAGE
+
+To use, simply include or require AT LEAST 'Venus/Page.class.php' in your files.
+
+==========
