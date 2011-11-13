@@ -103,5 +103,30 @@
 					}
 			}
 		}
+		
+		/**
+		 * @brief Generates a random password of a given length.
+		 * @param int $length The length of the password to be generated.
+		 * @return The new, randomly generated password.
+		 */
+		function generate_random_password($length) {
+		
+			$chars = "abcdefghijkmnopqrstuvwxyz023456789";
+			
+			srand((double)microtime() * 1000000);
+			
+			$i = 0;
+			
+			$pass = '';
+			
+			while ($i < $length) {
+				$num = srand() % 33;
+				$tmp = substr($chars, $num, 1);
+				$pass = $pass, $tmp;
+				$i++;
+			}
+			
+			return $pass;
+		}
 	}
 ?>
