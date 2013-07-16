@@ -204,11 +204,15 @@
 		 * <li><b><i>_top</i></b> - Opens the link in the full body of the window.</li>
 		 * </ol>
 		 */
-		function link($title = 'New Link', $url = '#', $target = '_self')
+		function link($title = 'New Link', $url = '#', $target = '_self', $display = true)
 		{
 			
-			echo "<a href='$url' target='$target'>$title</a>";
-			
+			$link = "<a href='$url' target='$target'>$title</a>";
+			if ($display) {
+				echo $link;
+			} else {
+				return $link;
+			}
 		}
 
 		/**
@@ -224,7 +228,7 @@
 		function image_link($image_src = 'http://placehold.it/75x75', $title = 'New Link', $url = '#', $target = '_self')
 		{
 			
-			echo "<a href='$url' target='$target'><img src='$image_src' /></a>";
+			echo $this->link($this->image($image_src, $title, false), $url, $target, false);
 			
 		}
 		
@@ -237,10 +241,15 @@
 		 * @param url $image_src The source URL of the image.
 		 * @param string $title The title of the image, in case it cannot be displayed.
 		 */
-		function image($image_src = 'http://placehold.it/75x75', $title = 'New Image')
+		function image($image_src = 'http://placehold.it/75x75', $title = 'New Image', $display = true)
 		{
 			 
-			echo "<img src='$image_src' alt='$title' />";
+			$img = "<img src='$image_src' alt='$title' />";
+			if ($display) {
+				echo $img;
+			} else {
+				return $img;
+			}
 		}
 		
 		/**
